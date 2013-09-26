@@ -39,8 +39,23 @@ def enumerate_kmers_in_fasta_file(k_mer_counts):
   
   pass
 
-#my_wt_dict = enumerate_kmers_in_fasta_file(wt_reads)
-#my_mu_dict = enumerate_kmers_in_fasta_file(mu_reads)
+# ----Main part of the program:
+# open fasta file and iterate through the sequence 
+#
+from Bio import SeqIO   # move this to the top !!!!
+
+# This needs to be adapted because first we open the wt sequence then the mu sequence files
+
+wtFastaFile = open(</FASTAfilename>)
+for i in SeqIO.parse(fastaFile,'fasta')
+    # print i.id; print i.seq
+    # obtain k-mer count for each sequence and build up dictionary by calling the functions above
+    # !!! my_wt_dict = enumerate_kmers_in_fasta_file(wt_reads)   
+wtfastaFile.close()
+
+# obtain k-mer count for each sequence and build up dictionary by calling the functions above
+
+# my_mu_dict = enumerate_kmers_in_fasta_file(mu_reads)
 
 # find differences between my_wt_dict and my_mu_dict
 #mu_only = set(my_mu_dict.keys()) - set(my_wt_dict.keys())
