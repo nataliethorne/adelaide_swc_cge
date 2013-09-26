@@ -7,6 +7,8 @@ Tests = [
   ['ACGTGA', 2, 4, 'GT'],
   ['ACGTGA', 4, 6, 'GA'],
   ['ACGTGT', 6, 1, 'TA'],
+  ['A', 1, 20, 'AAAAAAAAAAAAAAAAAAA'],
+  ['ATCGC', 1, 1, ''],
 ]
 
 passes = 0
