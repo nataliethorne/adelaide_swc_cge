@@ -19,7 +19,7 @@ def read_simulator(sequence, n, out_fasta_filename):
 # call read_simulator() for each of the Mu and Wt sequences
 
 def enumerate_kmers_in_sequence(sequence, k):
-	''' returns a dictionary of k-mer counts '''
+    ''' returns a dictionary of k-mer counts '''
     # Pre-compute number of k-mers from a sequence
     step=1 # this could be changed 
     dKMers={}
@@ -28,16 +28,16 @@ def enumerate_kmers_in_sequence(sequence, k):
     for i in range(0,numOfKmers*step,step):
         kMer=sequence[i:i+k]
         # now generate the dictionary
-        if Kmer in dKMers:
-            dkMers[Kmer]+= 1
+        if kMer in dKMers:
+            dKMers[kMer]+= 1
         else:
-            dkMers[Kmer]=1
-    return dKMers	
+            dKMers[kMer]=1
+    return dKMers
 
 def enumerate_kmers_in_fasta_file(k_mer_counts):
-	# call enumerate_kmers_in_sequence() for each fasta sequence
-	
-	pass
+  # call enumerate_kmers_in_sequence() for each fasta sequence
+  
+  pass
 
 #my_wt_dict = enumerate_kmers_in_fasta_file(wt_reads)
 #my_mu_dict = enumerate_kmers_in_fasta_file(mu_reads)
