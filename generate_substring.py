@@ -45,27 +45,42 @@ def enumerate_kmers_in_sequence(sequence, k):
 
 def enumerate_kmers_in_fasta_file(k_mer_counts):
   # call enumerate_kmers_in_sequence() for each fasta sequence
-  
+  # allKMers=
   pass
 
-# ----Main part of the program:
-# open fasta file and iterate through the sequence 
+# ---- ----- Main part of the program   --------- :
+
+# 1. Step: open witdtype sequence file and generate the 100bp sequence reads & write to file
+wtSeqFile = open('source_data/source_file.fas', 'r')
+
+# here some stuff missing
+
+#           
+# 2. Step: repeat for the mutant sequence file 
+muSeqFile = open('source_data/mutant.fas', 'r')
+
+# here some stuff missing
+
+#
+# 3. Step: open the wtReads and mutantReads files and do the Kmer counts
 #
 
-# This needs to be adapted because first we open the wt sequence then the mu sequence files
+wtReadsFile=open('source_data/<name of wtReadsfile>,'r')
 
-wtFastaFile = open('source_data/source_file.fas', 'r')
-for i in SeqIO.parse(wtFastaFile,'fasta'):
-    print i.id; #print i.seq
+for i in SeqIO.parse(wtReadsFile,'fasta'):
+    # print i.id; #print i.seq
     # obtain k-mer count for each sequence and build up dictionary by calling the functions above
-    # !!! my_wt_dict = enumerate_kmers_in_fasta_file(wt_reads)   
-wtFastaFile.close()
+    # my_wt_dict = enumerate_kmers_in_fasta_file(wt_reads)   
+wtReadsFile.close()
+
+#
+# 4.Step; compare the dictionaries find differences between my_wt_dict and my_mu_dict
 
 # obtain k-mer count for each sequence and build up dictionary by calling the functions above
 
 # my_mu_dict = enumerate_kmers_in_fasta_file(mu_reads)
 
-# find differences between my_wt_dict and my_mu_dict
+# ------ find differences between my_wt_dict and my_mu_dict
 #mu_only = set(my_mu_dict.keys()) - set(my_wt_dict.keys())
 #wt_only = set(my_wt_dict.keys()) - set(my_mu_dict.keys())
 
