@@ -7,6 +7,14 @@ def generate_substring(sequence, length=100):
   return get_substring_from_circular(sequence, start_idx, end_idx)
 
 def get_substring_from_circular(sequence, start_idx, end_idx):
+  '''Gets a substring from sequence while allowing the sequence to be circular. i.e. the two ends come together and end_idx can be < start_idx
+  >>> get_substring_from_circular('ACGTGA', start_idx=0, end_idx=3)
+  'ACG'
+  >>> get_substring_from_circular('ACGTGA', start_idx=0, end_idx=1)
+  'A'
+  >>> get_substring_from_circular('ACGTGA', start_idx=4, end_idx=2)
+  'GAAC'
+  '''
   return sequence[start_idx:end_idx]
 
 def read_simulator(sequence, n, out_fasta_filename):
@@ -38,6 +46,12 @@ def enumerate_kmers_in_fasta_file(k_mer_counts):
   # call enumerate_kmers_in_sequence() for each fasta sequence
   
   pass
+
+if __name__ == '__main__':
+  # this runs the doctests when the file is executed by python
+  # but doesn't run them when the file is included
+  import doctest
+  doctest.testmod()
 
 #my_wt_dict = enumerate_kmers_in_fasta_file(wt_reads)
 #my_mu_dict = enumerate_kmers_in_fasta_file(mu_reads)
